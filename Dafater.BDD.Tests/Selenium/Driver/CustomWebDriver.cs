@@ -395,6 +395,7 @@ namespace Driver
             {
                 if (webElement.Text.Equals(option))
                 {
+
                     ClickOn(webElement);
                     break;
                 }
