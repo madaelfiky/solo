@@ -24,6 +24,10 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="SpecFlow\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="Feature\Umrah - Copy.feature.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
@@ -59,6 +63,13 @@
     
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Compile Update="Feature\Solo.feature.cs">
+      <DependentUpon>Solo.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
   <ItemGroup>
     <None Update="Default.srprofile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -72,6 +83,13 @@
     <None Update="Resources\Settings\appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Feature\Solo.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
   </ItemGroup>
 
 </Project>
