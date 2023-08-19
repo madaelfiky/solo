@@ -1,4 +1,8 @@
-﻿using OpenQA.Selenium;
+﻿using BLL.Data;
+using Gherkin.CucumberMessages.Types;
+using LivingDoc.Dtos;
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.Resources;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -405,8 +409,9 @@ namespace Driver
         public void UploadFile(By by,string fileName) {            
             SendKeys(by, 
                 Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase).Substring(6)
-                + "\\Resources\\Data\\" 
-                + fileName);
+                + "\\Resources\\Data\\"
+            + fileName);
         }
+
     }
 }
